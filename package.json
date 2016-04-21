@@ -19,6 +19,10 @@
   ],
   "author": "dev@mixpanel.com",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mixpanel/webcomponent/issues"
+  },
+  "homepage": "https://github.com/mixpanel/webcomponent#readme",
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.6",
