@@ -1,6 +1,6 @@
 {
   "name": "webcomponent",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "lightweight helpers for constructing web components",
   "main": "build/index.js",
   "scripts": {
