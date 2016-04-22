@@ -46,10 +46,11 @@ If no `errorHandler` is passed, JSON-parsing errors will result in `null` being 
 
 `isAttributeEnabled(attrName)`: check whether a boolean-like attribute is 'enabled', taking into account usages such as:
 ```html
-<my-widget awesome=true>    <!-- enabled -->
-<my-widget awesome>         <!-- enabled -->
-<my-widget awesome=false>   <!-- disabled -->
-<my-widget>                 <!-- disabled -->
+<my-widget awesome="true">     <!-- enabled -->
+<my-widget awesome>            <!-- enabled -->
+<my-widget awesome="awesome">  <!-- enabled -->
+<my-widget awesome="false">    <!-- disabled -->
+<my-widget>                    <!-- disabled -->
 ```
 
 ## License
