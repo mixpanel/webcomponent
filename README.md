@@ -17,20 +17,21 @@ Register web components by extending the `WebComponent` class instead of `HTMLEl
 ```javascript
 import WebComponent from 'webcomponent';
 class MyWidget extends WebComponent {
-  attachedCallback() {
+  connectedCallback() {
     // ...
   }
 
-  get myattr() {
+  get myprop() {
     // ...
   }
   // etc
 }
-document.registerElement('my-widget', MyWidget);
+customElements.define('my-widget', MyWidget);
 ```
 
 `WebComponent` is a thin wrapper around `HTMLElement` which
 - works out-of-the-box in Safari (see Babel issue ["Can't extend HTMLElement in Safari"](https://phabricator.babeljs.io/T1548))
+- works out-of-the-box with Babel 6's class inheritance, without the need for extra plugins (see Babel issue ["Native extends breaks HTMLELement, Array, and others"](https://github.com/babel/babel/issues/4480))
 - provides some extra helper methods next to the standard [Element API](https://developer.mozilla.org/en-US/docs/Web/API/Element)
 
 #### Built-in helper methods:
