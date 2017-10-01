@@ -4,7 +4,7 @@
   "description": "Usage example for webcomponent module",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --inline",
+    "start": "webpack-dev-server --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dev@mixpanel.com",
