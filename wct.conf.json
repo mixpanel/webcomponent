@@ -1,0 +1,39 @@
+{
+  "verbose": false,
+  "plugins": {
+    "local": {
+      "disabled": true,
+      "browsers": ["chrome", "firefox"]
+    },
+    "sauce": {
+      "disabled": true,
+      "browsers": [
+        {
+          "browserName": "chrome",
+          "version": "latest",
+          "platform": "OS X 10.11"
+        },
+        {
+          "browserName": "chrome",
+          "version": "45.0",
+          "platform": "OS X 10.10"
+        },
+        {
+          "browserName": "firefox",
+          "version": "latest",
+          "platform": "OS X 10.11"
+        },
+        {
+          "browserName": "microsoftedge",
+          "version": "",
+          "platform": "Windows 10"
+        },
+        {
+          "browserName": "safari",
+          "version": "9.0",
+          "platform": "OS X 10.11"
+        }
+      ]
+    }
+  }
+}
