@@ -21,6 +21,11 @@ var webpackConfig = {
       template: 'index.template.html',
     }),
   ],
+  resolve: {
+    alias: {
+      'webcomponent': path.join(__dirname, '..', 'build'),
+    },
+  },
 };
 
 module.exports = webpackConfig;
