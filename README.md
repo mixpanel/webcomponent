@@ -54,6 +54,16 @@ If no `errorHandler` is passed, JSON-parsing errors will result in `null` being 
 <my-widget>                    <!-- disabled -->
 ```
 
+## Development
+
+Install dependencies: `npm install`
+
+Run local demo:
+- `cd demo`
+- `npm install`
+- `npm start`
+- Visit [http://localhost:8080/](http://localhost:8080/)
+
 ## License
 
 MIT
