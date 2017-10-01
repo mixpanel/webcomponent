@@ -11,11 +11,11 @@
         {
           "browserName": "chrome",
           "version": "latest",
-          "platform": "OS X 10.11"
+          "platform": "OS X 10.12"
         },
         {
           "browserName": "chrome",
-          "version": "45.0",
+          "version": "45",
           "platform": "OS X 10.10"
         },
         {
@@ -24,13 +24,28 @@
           "platform": "OS X 10.11"
         },
         {
+          "browserName": "firefox",
+          "version": "51",
+          "platform": "Windows 10"
+        },
+        {
           "browserName": "microsoftedge",
-          "version": "",
+          "version": "latest",
+          "platform": "Windows 10"
+        },
+        {
+          "browserName": "microsoftedge",
+          "version": "13",
           "platform": "Windows 10"
         },
         {
           "browserName": "safari",
-          "version": "9.0",
+          "version": "latest",
+          "platform": "OS X 10.12"
+        },
+        {
+          "browserName": "safari",
+          "version": "9",
           "platform": "OS X 10.11"
         }
       ]
