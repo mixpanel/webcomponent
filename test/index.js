@@ -1,24 +1,6 @@
-import WebComponent from '../lib';
+import TestWidget from './fixtures';
 
-customElements.define(`test-widget`, class TestWidget extends WebComponent {
-  constructor() {
-    super();
-    this.constructed = true;
-  }
-
-  connectedCallback() {
-    this.innerHTML = `Hello world`;
-    this.connected = true;
-  }
-
-  static get observedAttributes() {
-    return [`foo`];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    this.lastAttrChanged = name;
-  }
-});
+customElements.define(`test-widget`, TestWidget);
 
 describe(`WebComponent instance`, function() {
   let el;
