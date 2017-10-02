@@ -11,6 +11,10 @@ export default class TestWidget extends WebComponent {
     this.connected = true;
   }
 
+  disconnectedCallback() {
+    this.disconnected = true;
+  }
+
   static get observedAttributes() {
     return [`foo`];
   }

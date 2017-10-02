@@ -23,6 +23,14 @@ describe(`WebComponent instance`, function() {
       expect(el.innerHTML).to.be.equal(`Hello world`);
     });
 
+    it(`calls disconnectedCallback when removed from DOM`, function() {
+      expect(el.disconnected).not.to.be.ok;
+      document.body.appendChild(el);
+      expect(el.disconnected).not.to.be.ok;
+      document.body.innerHTML = ``;
+      expect(el.disconnected).to.be.ok;
+    });
+
     it(`observes attribute changes`, function() {
       expect(el.lastAttrChanged).not.to.be.ok;
       el.setAttribute(`foo`, `bar`);
