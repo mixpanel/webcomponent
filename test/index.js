@@ -10,7 +10,31 @@ describe(`WebComponent instance`, function() {
     el = document.createElement(`test-widget`);
   });
 
-  it(`supports custom constructors`, function() {
-    expect(el.constructed).to.be.ok;
+  describe(`Custom Elements spec behavior`, function() {
+    it(`supports custom constructors`, function() {
+      expect(el.constructed).to.be.ok;
+    });
+
+    it(`calls connectedCallback when attached to DOM`, function() {
+      expect(el.connected).not.to.be.ok;
+      expect(el.innerHTML).to.be.empty;
+      document.body.appendChild(el);
+      expect(el.connected).to.be.ok;
+      expect(el.innerHTML).to.be.equal(`Hello world`);
+    });
+
+    it(`observes attribute changes`, function() {
+      expect(el.lastAttrChanged).not.to.be.ok;
+      el.setAttribute(`foo`, `bar`);
+      expect(el.lastAttrChanged).to.equal(`foo`);
+      expect(el.getAttribute(`foo`)).to.equal(`bar`);
+    });
+
+    it(`does not observe changes to undeclared attributes`, function() {
+      expect(el.lastAttrChanged).not.to.be.ok;
+      el.setAttribute(`moo`, `baz`);
+      expect(el.lastAttrChanged).not.to.be.ok;
+      expect(el.getAttribute(`moo`)).to.equal(`baz`);
+    });
   });
 });
