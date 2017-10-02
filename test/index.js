@@ -45,4 +45,51 @@ describe(`WebComponent instance`, function() {
       expect(el.getAttribute(`moo`)).to.equal(`baz`);
     });
   });
+
+  describe(`lib-specific convenience methods`, function() {
+    describe(`getJSONAttribute()`, function() {
+      it(`parses attr strings as JSON`, function() {
+        el.setAttribute(`foo`, `5`);
+        expect(el.getJSONAttribute(`foo`)).to.eql(5);
+
+        el.setAttribute(`foo`, `"Hi"`);
+        expect(el.getJSONAttribute(`foo`)).to.eql(`Hi`);
+
+        el.setAttribute(`foo`, `{}`);
+        expect(el.getJSONAttribute(`foo`)).to.eql({});
+
+        el.setAttribute(`foo`, `{"x": 42}`);
+        expect(el.getJSONAttribute(`foo`)).to.eql({x: 42});
+      });
+
+      it(`defaults to null when parsing fails`, function() {
+        el.setAttribute(`foo`, `{not valid JSON}`);
+        expect(el.getJSONAttribute(`foo`)).to.be.null;
+      });
+
+      it(`supports custom error handlers`, function() {
+        el.setAttribute(`foo`, `{not valid JSON}`);
+        const reverseAttrName = attr => [...attr].reverse().join(``);
+        expect(el.getJSONAttribute(`foo`, reverseAttrName)).to.equal(`oof`);
+      });
+
+      it(`only calls custom error handlers when parsing fails`, function() {
+        el.setAttribute(`foo`, `5`);
+        expect(el.getJSONAttribute(`foo`, () => `bar`)).to.equal(5);
+        el.setAttribute(`foo`, `{not valid JSON}`);
+        expect(el.getJSONAttribute(`foo`, () => `bar`)).to.equal(`bar`);
+      });
+
+      it(`passes errors to the handler`, function() {
+        el.setAttribute(`foo`, `{not valid JSON}`);
+        let error = ``;
+        const handler = (attr, err) => {
+          error = err;
+          return `hello`;
+        };
+        expect(el.getJSONAttribute(`foo`, handler)).to.equal(`hello`);
+        expect(error.message).not.to.be.empty;
+      });
+    });
+  });
 });
