@@ -11,6 +11,11 @@ describe(`WebComponent instance`, function() {
   });
 
   describe(`Custom Elements spec behavior`, function() {
+
+    // although this basic Custom Elements behavior is not specific
+    // to this library, these test cases are useful for ensuring that
+    // our polyfill/patching does not break CE on any supported browser
+
     it(`supports custom constructors`, function() {
       expect(el.constructed).to.be.ok;
     });
