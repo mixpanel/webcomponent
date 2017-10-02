@@ -91,5 +91,47 @@ describe(`WebComponent instance`, function() {
         expect(error.message).not.to.be.empty;
       });
     });
+
+    describe(`isAttributeEnabled()`, function() {
+      it(`interprets "true" as enabled`, function() {
+        el.setAttribute(`foo`, `true`);
+        expect(el.isAttributeEnabled(`foo`)).to.be.ok;
+      });
+
+      it(`interprets "" (<my-element myattr>) as enabled`, function() {
+        el.setAttribute(`foo`, ``);
+        expect(el.isAttributeEnabled(`foo`)).to.be.ok;
+      });
+
+      it(`interprets name-and-value-match (<my-element foo="foo">) as enabled`, function() {
+        el.setAttribute(`foo`, `foo`);
+        expect(el.isAttributeEnabled(`foo`)).to.be.ok;
+      });
+
+      it(`interprets "false" as disabled`, function() {
+        el.setAttribute(`foo`, `false`);
+        expect(el.isAttributeEnabled(`foo`)).not.to.be.ok;
+      });
+
+      it(`interprets lack of attribute as disabled`, function() {
+        expect(el.isAttributeEnabled(`foo`)).not.to.be.ok;
+      });
+
+      it(`interprets arbitrary values as disabled`, function() {
+        el.setAttribute(`foo`, `random text`);
+        expect(el.isAttributeEnabled(`foo`)).not.to.be.ok;
+
+        el.setAttribute(`foo`, `1`);
+        expect(el.isAttributeEnabled(`foo`)).not.to.be.ok;
+      });
+
+      it(`is case-insensitive`, function() {
+        el.setAttribute(`foo`, `TrUe`);
+        expect(el.isAttributeEnabled(`foo`)).to.be.ok;
+
+        el.setAttribute(`foo`, `FALSE`);
+        expect(el.isAttributeEnabled(`foo`)).not.to.be.ok;
+      });
+    });
   });
 });
