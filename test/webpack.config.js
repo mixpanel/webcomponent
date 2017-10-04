@@ -19,6 +19,14 @@ const webpackConfig = {
       },
     ],
   },
+  stats: {
+    modules: false,
+    children: false,
+    chunks: false,
+    assets: true,
+    assetsSort: `name`,
+    timings: true,
+  },
 };
 
 module.exports = webpackConfig;
