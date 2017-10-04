@@ -1,5 +1,7 @@
 # webcomponent
 
+[![Build Status](https://travis-ci.org/mixpanel/webcomponent.svg?branch=master)](https://travis-ci.org/mixpanel/webcomponent)
+
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/mixpanel-webcomponents.svg)](https://saucelabs.com/u/mixpanel-webcomponents)
 
 Lightweight utilities for constructing [Web Components](http://webcomponents.org/)
