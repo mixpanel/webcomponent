@@ -1,5 +1,7 @@
 # webcomponent
 
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/mixpanel-webcomponents.svg)](https://saucelabs.com/u/mixpanel-webcomponents)
+
 Lightweight utilities for constructing [Web Components](http://webcomponents.org/)
 
 ## Installation
