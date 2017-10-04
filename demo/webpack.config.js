@@ -10,7 +10,7 @@ var webpackConfig = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['es2015'],
+          presets: ['env'],
         },
       },
     ],
@@ -21,6 +21,11 @@ var webpackConfig = {
       template: 'index.template.html',
     }),
   ],
+  resolve: {
+    alias: {
+      'webcomponent': path.join(__dirname, '..', 'build'),
+    },
+  },
 };
 
 module.exports = webpackConfig;

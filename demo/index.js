@@ -1,4 +1,4 @@
-import WebComponent from '../build';
+import WebComponent from 'webcomponent';
 
 class MyWidget extends WebComponent {
   constructor() {
