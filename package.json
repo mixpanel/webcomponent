@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "lightweight helpers for constructing web components",
   "main": "build/index.js",
-  "types": "./lib/index.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "babel lib -d build",
     "build-test": "webpack --config test/webpack.config.js",

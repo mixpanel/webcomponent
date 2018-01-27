@@ -2,26 +2,13 @@
 // Project: webcomponent
 // Definitions by: Mixpanel (https://mixpanel.com)
 
-declare class CustomElement extends HTMLElement {
-    /**
-     * Custom Elements v0 spec
-     */
-    /**
-     * Called when an instance of the Component is attached to the DOM.
-     */
-    attachedCallback(): void;
-    /**
-     * Called when an instance of the Component is created.
-     */
-    createdCallback(): void;
-    /**
-     * Called when an instance of the Component is detached from the DOM.
-     */
-    detachedCallback(): void;
-    /**
-     * Called when an attribute is changed, appended, removed, or replaced on the Component.
-     */
-    attributeChangedCallback(attributeName: string, oldValue?: any, newValue?: any);
+// Custom Elements v1 spec
+export class CustomElement extends HTMLElement {
+    static readonly observedAttributes: Array<string>;
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+    attributeChangedCallback(name: string, oldValue: null|string, newValue: null|string): void;
+    adoptedCallback?(): void;
 }
 
 export class WebComponent extends CustomElement {
