@@ -97,6 +97,37 @@ describe(`WebComponent instance`, function() {
       });
     });
 
+    describe(`getNumberAttribute()`, function() {
+      it(`returns null when attribute is unspecified`, function() {
+        expect(el.getNumberAttribute(`num`)).to.eql(null);
+      });
+
+      it(`returns null when attribute is empty string`, function() {
+        el.setAttribute(`num`, ``);
+        expect(el.getNumberAttribute(`num`)).to.eql(null);
+      });
+
+      it(`returns null when attribute is non-numeric string`, function() {
+        el.setAttribute(`num`, `asd`);
+        expect(el.getNumberAttribute(`num`)).to.eql(null);
+      });
+
+      it(`returns null when attribute is non-numeric string that starts with number`, function() {
+        el.setAttribute(`num`, `123asd`);
+        expect(el.getNumberAttribute(`num`)).to.eql(null);
+      });
+
+      it(`returns int number when attribute is int numeric string`, function() {
+        el.setAttribute(`num`, `123`);
+        expect(el.getNumberAttribute(`num`)).to.eql(123);
+      });
+
+      it(`returns decimal number when attribute is decimal numeric string`, function() {
+        el.setAttribute(`num`, `123.45`);
+        expect(el.getNumberAttribute(`num`)).to.eql(123.45);
+      });
+    });
+
     describe(`isAttributeEnabled()`, function() {
       it(`interprets "true" as enabled`, function() {
         el.setAttribute(`foo`, `true`);
