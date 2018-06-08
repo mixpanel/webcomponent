@@ -117,9 +117,19 @@ describe(`WebComponent instance`, function() {
         expect(el.getNumberAttribute(`num`)).to.eql(null);
       });
 
+      it(`returns 0 when attribute is '0'`, function() {
+        el.setAttribute(`num`, `0`);
+        expect(el.getNumberAttribute(`num`)).to.eql(0);
+      });
+
       it(`returns int number when attribute is int numeric string`, function() {
         el.setAttribute(`num`, `123`);
         expect(el.getNumberAttribute(`num`)).to.eql(123);
+      });
+
+      it(`returns negative int number when attribute is negative int numeric string`, function() {
+        el.setAttribute(`num`, `-123`);
+        expect(el.getNumberAttribute(`num`)).to.eql(-123);
       });
 
       it(`returns decimal number when attribute is decimal numeric string`, function() {
