@@ -49,6 +49,16 @@ this.getJSONAttribute('data-magic-numbers') // [1, 2, 3]
 ```
 If no `errorHandler` is passed, JSON-parsing errors will result in `null` being returned.
 
+#### `getNumberAttribute(attrName)`
+Parse a numeric attribute, e.g.,
+```html
+<my-widget-list num-widgets="15">
+```
+```javascript
+this.getNumberAttribute('num-widgets') // 15
+```
+Non-numeric values will return `null`.
+
 #### `isAttributeEnabled(attrName)`
 Check whether a boolean-like attribute is 'enabled', taking into account usages such as:
 ```html
