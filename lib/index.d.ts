@@ -1,4 +1,4 @@
-// Type definitions for webcomponent 1.0.0
+// Type definitions for webcomponent 1.2.0
 // Project: webcomponent
 // Definitions by: Mixpanel (https://mixpanel.com)
 
@@ -17,6 +17,11 @@ export class WebComponent extends CustomElement {
      * Pass an optional errorHandler in case JSON.parse() fails.
      */
     getJSONAttribute(attrName: string, errorHandler?: () => void): any;
+    /**
+     * Parse number attributes, returning null if the string attribute
+     * cannot be successfully parsed.
+     */
+    getNumberAttribute(attrName: string): number|null;
     /**
      * Check whether a boolean attribute is 'enabled' in an element instance
      * taking into account string and empty attribute usages.
