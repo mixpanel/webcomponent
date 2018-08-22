@@ -11,7 +11,7 @@
         {
           "browserName": "chrome",
           "version": "latest",
-          "platform": "OS X 10.12"
+          "platform": "OS X 10.13"
         },
         {
           "browserName": "chrome",
@@ -41,7 +41,7 @@
         {
           "browserName": "safari",
           "version": "latest",
-          "platform": "OS X 10.12"
+          "platform": "OS X 10.13"
         },
         {
           "browserName": "safari",
