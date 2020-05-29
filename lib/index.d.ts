@@ -11,7 +11,7 @@ export class CustomElement extends HTMLElement {
     adoptedCallback?(): void;
 }
 
-export class WebComponent extends CustomElement {
+export default class WebComponent extends CustomElement {
     /**
      * Parse an attribute which has been serialized as JSON.
      * Pass an optional errorHandler in case JSON.parse() fails.
