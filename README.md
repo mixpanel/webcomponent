@@ -1,6 +1,6 @@
 # webcomponent
 
-[![Build Status](https://travis-ci.org/mixpanel/webcomponent.svg?branch=master)](https://travis-ci.org/mixpanel/webcomponent)
+![Build Status](https://github.com/mixpanel/webcomponent/actions/workflows/tests.yml/badge.svg)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/mixpanel-webcomponents.svg)](https://saucelabs.com/u/mixpanel-webcomponents)
 
