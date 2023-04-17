@@ -34,7 +34,7 @@
     "babel-core": "^6.7.6",
     "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.6.0",
-    "web-component-tester": "^5.0.0",
+    "web-component-tester": "^6.9.2",
     "webpack": "^1.12.9"
   }
 }
